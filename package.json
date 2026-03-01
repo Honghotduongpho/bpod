@@ -1,0 +1,12 @@
+{
+  "name": "messenger-bot-spam",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "fca-unofficial": "latest",
+    "fs-extra": "^11.1.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

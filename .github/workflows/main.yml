@@ -1,0 +1,21 @@
+name: Messenger Bot Runner
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *' # Tự động restart mỗi 6 tiếng để chống treo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npm start
+        env:
+          APPSTATE_SECRET: ${{ secrets.APPSTATE_SECRET }}
